@@ -27,9 +27,13 @@ km = st.number_input("kms_driven", step=1, value=0, format="%d")
 fuel = st.selectbox('Fuel Type', df['fuel_type'].unique())
 
 if st.button('Price Predict'):
-    query = np.array([name, company, year, km, fuel])
-    query = query.reshape(1, -1)
-    query_df = pd.DataFrame(query, columns=['name', 'company', 'year', 'kms_driven', 'fuel_type'])
+    query_df = pd.DataFrame({
+        'name': [name],
+        'company': [company],
+        'year': [year],
+        'kms_driven': [km],
+        'fuel_type': [fuel]
+    })
     st.subheader("The predicted price of this configuration is : " + str(int(pipe.predict(query_df)[0])))
 
 
