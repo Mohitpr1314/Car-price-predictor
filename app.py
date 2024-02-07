@@ -16,11 +16,11 @@ name = st.selectbox('Car Name', df['name'].unique())
 company = st.selectbox('Company', df['company'].unique())
 
 # year
-year = st.number_input("Enter an year:", step=1, value=2000, format="%d")
+year = st.number_input("Enter an year:", step=1, value=2015, format="%d")
 
 
 # km
-km = st.number_input("kms_driven", step=1, value=0, format="%d")
+km = st.number_input("kms_driven", step=1, value=5000, format="%d")
 
 
 # fuel
